@@ -36,12 +36,14 @@ public class Barrel_Base : MonoBehaviour
 
     public void BringInPlayer(GameObject _player)
     {
-
+        
         BarrelEnterDispatcher?.ActivateDispatcher(_player);
         PassengerInput = _player.GetComponent<Movement_Pinball>().IH;
         
         Passenger = _player;
-        Passenger.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
+        Rigidbody2D RB2D = Passenger.GetComponent<Rigidbody2D>();
+        RB2D.velocity = Vector3.zero;
+        RB2D.isKinematic = true;
         Passenger.transform.position = transform.position;
         Passenger.transform.SetParent(transform);
     }
@@ -49,7 +51,9 @@ public class Barrel_Base : MonoBehaviour
     public void ShootPlayerOut()
     {
         Passenger.transform.SetParent(null);
-        Passenger.GetComponent<Rigidbody2D>().velocity = transform.up * ExitVelocity;
+        Rigidbody2D RB2D = Passenger.GetComponent<Rigidbody2D>();
+        RB2D.velocity = transform.up * ExitVelocity;
+        RB2D.isKinematic = false;
         Passenger = null;
         PassengerInput = null;
     }
