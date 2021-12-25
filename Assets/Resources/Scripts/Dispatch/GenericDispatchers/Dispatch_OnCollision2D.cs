@@ -10,15 +10,15 @@ public class Dispatch_OnCollision2D : Dispatcher
     {
         if (Tags.Length == 0)
         {
-            ActivateDispatcher(GetComponent<Collider2D>().gameObject);
+            ActivateDispatcher(collision.collider.gameObject);
             return;
         }
 
         foreach (string tag in Tags)
         {
-            if (GetComponent<Collider>().tag == tag)
+            if (collision.collider.tag == tag)
             {
-                ActivateDispatcher(GetComponent<Collider2D>().gameObject);
+                ActivateDispatcher(collision.collider.gameObject);
                 return;
             }
         }

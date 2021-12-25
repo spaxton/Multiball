@@ -7,6 +7,7 @@ public class Listener_ChangeCharacterStat : Listener
     [Header("Configuration")]
     public string StatName;
     public float ChangeValue = 0F;
+    public Character Character;
 
     public override void RunListenerLogic(DispatchData _dispatchData)
     {
@@ -15,13 +16,9 @@ public class Listener_ChangeCharacterStat : Listener
 
     public void ChangeStat(DispatchData _dispatchData)
     {
-        Character character = _dispatchData.InteractorGO.GetComponent<Character>();
-
-        if (character != null)
+        if (Character != null)
         {
-            character.ChangeCurrentValue(StatName, ChangeValue);
+            Character.ChangeCurrentValue(StatName, ChangeValue);
         }
     }
-
-
 }

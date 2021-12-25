@@ -155,6 +155,7 @@ MonoBehaviour:
   CurrentStats:
   - Name: Charge
     MaxValue: 5
+    MinValue: 0
     _CurrentValue: 0
     StatDisplays: []
   OnCharacterSpawn:
@@ -187,6 +188,7 @@ MonoBehaviour:
   Dispatchers: []
   StatName: Charge
   ChangeValue: 1
+  Character: {fileID: 6039094584354090536}
 --- !u!114 &-7153142298892863847
 MonoBehaviour:
   m_ObjectHideFlags: 0
