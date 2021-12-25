@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    [Header("Debugging")]
+    [Header("Configuration")]
     public List<Stat> CurrentStats = new List<Stat>();
     public List<Listener> OnCharacterSpawn = new List<Listener>();
 

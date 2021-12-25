@@ -7,7 +7,8 @@ using UnityEngine.Events;
 public class Stat
 {
     public string Name;
-    public float MaxValue;   
+    public float MaxValue;
+    public float MinValue = 0F;
     public float CurrentValue
     {
         get
@@ -17,7 +18,7 @@ public class Stat
 
         set
         {
-            _CurrentValue = value;
+            _CurrentValue = Mathf.Clamp(value, MinValue, MaxValue);
             UpdateStatDisplays();
         }
     }

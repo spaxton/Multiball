@@ -11,8 +11,12 @@ GameObject:
   - component: {fileID: 5311929549349600524}
   - component: {fileID: 6679706316818428865}
   - component: {fileID: 6790052432461447200}
-  - component: {fileID: 710576119967915372}
   - component: {fileID: -8272576633037386481}
+  - component: {fileID: 710576119967915372}
+  - component: {fileID: 6039094584354090536}
+  - component: {fileID: -4491109461117065915}
+  - component: {fileID: -2906901637032693030}
+  - component: {fileID: -7153142298892863847}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -107,19 +111,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &710576119967915372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6701533476737634008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa7f441eb3ceb23498af470266899c32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IH: {fileID: 0}
 --- !u!58 &-8272576633037386481
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -136,3 +127,78 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &710576119967915372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6701533476737634008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa7f441eb3ceb23498af470266899c32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IH: {fileID: 0}
+--- !u!114 &6039094584354090536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6701533476737634008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3b624346786fb54b83e9598141b1229, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrentStats:
+  - Name: Charge
+    MaxValue: 5
+    _CurrentValue: 0
+    StatDisplays: []
+  OnCharacterSpawn:
+  - {fileID: -4491109461117065915}
+--- !u!114 &-4491109461117065915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6701533476737634008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc56c060d15af674eb6ec330c9e4ab06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dispatchers: []
+--- !u!114 &-2906901637032693030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6701533476737634008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08b55a28da8645145b002a7f2b8e88ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dispatchers: []
+  StatName: Charge
+  ChangeValue: 1
+--- !u!114 &-7153142298892863847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6701533476737634008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ae70312f868d8349889126b1ce0c31d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Listeners:
+  - {fileID: -2906901637032693030}
+  Tags: []
