@@ -6,14 +6,10 @@ public class Character : MonoBehaviour
 {
     [Header("Configuration")]
     public List<Stat> CurrentStats = new List<Stat>();
-    public List<Listener> OnCharacterSpawn = new List<Listener>();
 
     public void Start()
     {
-        foreach (Listener listener in OnCharacterSpawn)
-        {
-            listener.RunListenerLogic(new DispatchData(gameObject, null));
-        }
+        FindObjectOfType<PlayerUIManager>()?.CreatePlayerUI(this);
     }
 
     public void ChangeCurrentValue(string _name, float _value)

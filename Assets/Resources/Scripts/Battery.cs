@@ -6,6 +6,8 @@ public class Battery : MonoBehaviour
 {
     [Header("Configuration")]
     public float ChargeCapacity;
+    public Transform ChargeMask;
+    public float MaskTravelDistance;
     public List<Listener> ChargeAddedEvent = new List<Listener>();
     public List<Listener> ChargeFilledEvent = new List<Listener>();
 
@@ -22,6 +24,44 @@ public class Battery : MonoBehaviour
         set
         {
             _CurrentCharge = Mathf.Clamp(value, 0F, ChargeCapacity);
+            ChargeMask.localPosition = new Vector2(0F, Mathf.Lerp(MaskTravelDistance, 0F, _CurrentCharge / ChargeCapacity));
+
+            
+        }
+    }
+
+    public void Start()
+    {
+        CurrentCharge = 0F;
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (_CurrentCharge >= ChargeCapacity)
+        {
+            return;
+        }
+
+        Character character = collision.GetComponent<Character>();
+
+        if (character != null)
+        {
+            Stat characterStat = character.FindStat("Charge");
+            if (characterStat != null)
+            {
+                AddCharge(characterStat.CurrentValue);
+
+                characterStat.CurrentValue = 0F;
+
+                if (_CurrentCharge == ChargeCapacity)
+                {
+                    OnBatteryCharged(character.gameObject);
+                }
+            }
+            else
+            {
+                Debug.LogError("Listener_AddBatteryCharge: Did not find Stat of type charge on " + character.gameObject);
+            }
         }
     }
 
@@ -30,5 +70,11 @@ public class Battery : MonoBehaviour
         CurrentCharge += _chargeAmount;
     }
 
-    
+    public void OnBatteryCharged(GameObject _activator)
+    {
+        foreach(Listener listener in ChargeFilledEvent)
+        {
+            listener.RunListenerLogic(new DispatchData(_activator, gameObject));
+        }
+    }
 }

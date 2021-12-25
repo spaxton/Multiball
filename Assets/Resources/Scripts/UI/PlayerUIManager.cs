@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Test_UIManager : MonoBehaviour
+public class PlayerUIManager : MonoBehaviour
 {
     [Header("Configuration")]
     public GameObject PlayerUIPrefab;

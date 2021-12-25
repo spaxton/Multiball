@@ -5,7 +5,6 @@ using UnityEngine;
 public class Barrel_Base : MonoBehaviour
 {
     [Header("Barrel Base Configuration")]
-    public Dispatcher BarrelEnterDispatcher;
     public float ExitVelocity;
 
     [Header("Debugging")]
@@ -37,7 +36,6 @@ public class Barrel_Base : MonoBehaviour
     public void BringInPlayer(GameObject _player)
     {
         
-        BarrelEnterDispatcher?.ActivateDispatcher(_player);
         PassengerInput = _player.GetComponent<Movement_Pinball>().IH;
         
         Passenger = _player;
@@ -46,16 +44,25 @@ public class Barrel_Base : MonoBehaviour
         RB2D.isKinematic = true;
         Passenger.transform.position = transform.position;
         Passenger.transform.SetParent(transform);
+
+        // TEST CODE BELOW
+        Passenger.GetComponent<Dispatch_OnTick>().IsRunning = true;
     }
 
     public void ShootPlayerOut()
     {
+        // TEST CODE BELOW
+        Passenger.GetComponent<Dispatch_OnTick>().IsRunning = false;
+
         Passenger.transform.SetParent(null);
         Rigidbody2D RB2D = Passenger.GetComponent<Rigidbody2D>();
         RB2D.velocity = transform.up * ExitVelocity;
         RB2D.isKinematic = false;
         Passenger = null;
         PassengerInput = null;
+
+
+
     }
 
     public void HandleFireInput()
