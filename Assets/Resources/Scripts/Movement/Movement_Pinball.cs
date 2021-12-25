@@ -9,7 +9,7 @@ public class Movement_Pinball : MonoBehaviour, IInputConnectable
 
     public void Start()
     {
-        GetComponent<Rigidbody2D>().velocity = Vector2.down * 10F;
+        GetComponent<Rigidbody2D>().velocity = Random.insideUnitCircle * 10F;
     }
     public void ConnectInput(InputHandler _IH)
     {

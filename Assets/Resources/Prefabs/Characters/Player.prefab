@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: -8272576633037386481}
   - component: {fileID: 710576119967915372}
   - component: {fileID: 6039094584354090536}
+  - component: {fileID: -7153142298892863847}
   - component: {fileID: -4491109461117065915}
   - component: {fileID: -2906901637032693030}
-  - component: {fileID: -7153142298892863847}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -160,6 +160,22 @@ MonoBehaviour:
     StatDisplays: []
   OnCharacterSpawn:
   - {fileID: -4491109461117065915}
+--- !u!114 &-7153142298892863847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6701533476737634008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ae70312f868d8349889126b1ce0c31d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Listeners:
+  - {fileID: -2906901637032693030}
+  Tags:
+  - Walls
 --- !u!114 &-4491109461117065915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,18 +205,3 @@ MonoBehaviour:
   StatName: Charge
   ChangeValue: 1
   Character: {fileID: 6039094584354090536}
---- !u!114 &-7153142298892863847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6701533476737634008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ae70312f868d8349889126b1ce0c31d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Listeners:
-  - {fileID: -2906901637032693030}
-  Tags: []

@@ -27,7 +27,6 @@ public class Battery : MonoBehaviour
 
     public void AddCharge(float _chargeAmount)
     {
-        Debug.Log(_chargeAmount);
         CurrentCharge += _chargeAmount;
     }
 
