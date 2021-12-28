@@ -208,7 +208,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cfa70332e3b5d445a8f1ac05b541ba1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Listeners: []
+  Listeners:
+  - {fileID: 5554515068766719677}
   TickPeriod: 1
   Timer: 0
   IsRunning: 0
@@ -227,4 +228,4 @@ MonoBehaviour:
   Dispatchers: []
   StatName: Charge
   ChangeValue: -1
-  Character: {fileID: 0}
+  Character: {fileID: 6039094584354090536}
