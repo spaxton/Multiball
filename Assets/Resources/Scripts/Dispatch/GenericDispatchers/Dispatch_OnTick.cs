@@ -27,6 +27,14 @@ public class Dispatch_OnTick : Dispatcher
        
     }
 
+    public void TurnOn()
+    {
+        IsRunning = true;
+    }
 
+    public void TurnOff()
+    {
+        IsRunning = false;
+    }
 
 }

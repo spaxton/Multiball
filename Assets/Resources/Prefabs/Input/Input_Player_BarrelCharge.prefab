@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3867016872170886232}
   - component: {fileID: 4190806686220977871}
   m_Layer: 0
-  m_Name: Input_Player
+  m_Name: Input_Player_BarrelCharge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

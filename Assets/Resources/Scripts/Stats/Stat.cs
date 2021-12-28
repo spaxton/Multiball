@@ -40,6 +40,7 @@ public class Stat
         }
 
         StatDisplays.Add(_statDisplay);
+        _statDisplay.RegisterStat(this);
     }
 
     public void UnregisterStatDisplay(StatDisplay _statDisplay)

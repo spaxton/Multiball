@@ -1,15 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Barrel_Base : MonoBehaviour
 {
     [Header("Barrel Base Configuration")]
     public float ExitVelocity;
+    public int RequiredBounces = 2;
+
 
     [Header("Debugging")]
     public InputHandler PassengerInput;
     public GameObject Passenger;
+    public TextMeshPro BounceTMP;
+
+    public void Start()
+    {
+        BounceTMP = GetComponentInChildren<TextMeshPro>();
+
+        if (BounceTMP != null)
+        {
+            BounceTMP.text = RequiredBounces.ToString();
+        }
+    }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -35,24 +49,27 @@ public class Barrel_Base : MonoBehaviour
 
     public void BringInPlayer(GameObject _player)
     {
-        
+
         PassengerInput = _player.GetComponent<Movement_Pinball>().IH;
-        
+
         Passenger = _player;
         Rigidbody2D RB2D = Passenger.GetComponent<Rigidbody2D>();
         RB2D.velocity = Vector3.zero;
         RB2D.isKinematic = true;
+
+
         Passenger.transform.position = transform.position;
         Passenger.transform.SetParent(transform);
 
-        // TEST CODE BELOW
-        Passenger.GetComponent<Dispatch_OnTick>().IsRunning = true;
-    }
+        //TEST CODE
+        _player.GetComponent<BounceHandler>()?.ResolveBounces(RequiredBounces);
+        _player.GetComponent<Dispatch_OnTick>()?.TurnOn();
 
+    }
     public void ShootPlayerOut()
     {
-        // TEST CODE BELOW
-        Passenger.GetComponent<Dispatch_OnTick>().IsRunning = false;
+        // TEST CODE
+        Passenger.GetComponent<Dispatch_OnTick>()?.TurnOff();
 
         Passenger.transform.SetParent(null);
         Rigidbody2D RB2D = Passenger.GetComponent<Rigidbody2D>();
@@ -60,6 +77,7 @@ public class Barrel_Base : MonoBehaviour
         RB2D.isKinematic = false;
         Passenger = null;
         PassengerInput = null;
+
 
 
 

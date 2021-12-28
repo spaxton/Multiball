@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8869349802254240286}
   - component: {fileID: 8869349802254240287}
   m_Layer: 0
-  m_Name: Barrel_Rotation
+  m_Name: Barrel_Rotation_WallCharge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -124,10 +124,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8348f85314ebbea418512811fb2e1c00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BarrelEnterDispatcher: {fileID: 0}
-  ExitVelocity: 10
+  ExitVelocity: 15
+  RequiredBounces: 2
   PassengerInput: {fileID: 0}
   Passenger: {fileID: 0}
+  BounceTMP: {fileID: 0}
   RotationSpeed: 100
 --- !u!1 &8869349802473119432
 GameObject:

@@ -10,6 +10,17 @@ public class Character : MonoBehaviour
     public void Start()
     {
         FindObjectOfType<PlayerUIManager>()?.CreatePlayerUI(this);
+
+        foreach(Stat stat in CurrentStats)
+        {
+            if (stat.StatDisplays.Count > 0F)
+            {
+                foreach(StatDisplay statDisplay in stat.StatDisplays)
+                {
+                    statDisplay.RegisterStat(stat);
+                }
+            }
+        }
     }
 
     public void ChangeCurrentValue(string _name, float _value)

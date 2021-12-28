@@ -14,12 +14,12 @@ GameObject:
   - component: {fileID: -8272576633037386481}
   - component: {fileID: 710576119967915372}
   - component: {fileID: 6039094584354090536}
-  - component: {fileID: -2582198888860421669}
   - component: {fileID: -7153142298892863847}
-  - component: {fileID: -2906901637032693030}
-  - component: {fileID: -7924726478208182141}
+  - component: {fileID: 113887426700880643}
+  - component: {fileID: 3311569083571341913}
+  - component: {fileID: 5554515068766719677}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player_WallCharge
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: e48799399c4be544a9942615e7b3e18f, type: 3}
   m_Color: {r: 0.4862745, g: 0.6313726, b: 0.7529412, a: 1}
   m_FlipX: 0
@@ -159,23 +159,11 @@ MonoBehaviour:
     MinValue: 0
     _CurrentValue: 0
     StatDisplays: []
---- !u!114 &-2582198888860421669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6701533476737634008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cfa70332e3b5d445a8f1ac05b541ba1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Listeners:
-  - {fileID: -7924726478208182141}
-  TickPeriod: 1
-  Timer: 0
-  IsRunning: 0
+  - Name: Bounces
+    MaxValue: 100
+    MinValue: 0
+    _CurrentValue: 0
+    StatDisplays: []
 --- !u!114 &-7153142298892863847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,10 +177,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Listeners:
-  - {fileID: -2906901637032693030}
+  - {fileID: 113887426700880643}
   Tags:
   - Walls
---- !u!114 &-2906901637032693030
+--- !u!114 &113887426700880643
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -208,7 +196,23 @@ MonoBehaviour:
   StatName: Charge
   ChangeValue: 2
   Character: {fileID: 6039094584354090536}
---- !u!114 &-7924726478208182141
+--- !u!114 &3311569083571341913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6701533476737634008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cfa70332e3b5d445a8f1ac05b541ba1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Listeners: []
+  TickPeriod: 1
+  Timer: 0
+  IsRunning: 0
+--- !u!114 &5554515068766719677
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -223,4 +227,4 @@ MonoBehaviour:
   Dispatchers: []
   StatName: Charge
   ChangeValue: -1
-  Character: {fileID: 6039094584354090536}
+  Character: {fileID: 0}
