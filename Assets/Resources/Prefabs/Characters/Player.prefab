@@ -156,7 +156,7 @@ MonoBehaviour:
   CurrentStats:
   - Name: Charge
     MaxValue: 100
-    MinValue: -100
+    MinValue: 0
     _CurrentValue: 0
     StatDisplays: []
   - Name: Bounces
