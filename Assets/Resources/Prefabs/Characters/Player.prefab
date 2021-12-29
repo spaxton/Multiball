@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 3311569083571341913}
   - component: {fileID: 5554515068766719677}
   m_Layer: 0
-  m_Name: Player_WallCharge
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

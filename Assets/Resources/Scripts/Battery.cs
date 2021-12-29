@@ -8,7 +8,6 @@ public class Battery : MonoBehaviour
     public float ChargeCapacity;
     public Transform ChargeMask;
     public float MaskTravelDistance;
-    public int RequiredBounces = 2;
     public List<Listener> ChargeAddedEvent = new List<Listener>();
     public List<Listener> ChargeFilledEvent = new List<Listener>();
 
@@ -44,9 +43,6 @@ public class Battery : MonoBehaviour
         }
 
         Character character = collision.GetComponent<Character>();
-
-        //TEST CODE
-        character.GetComponent<BounceHandler>()?.ResolveBounces(RequiredBounces);
 
         if (character != null)
         {

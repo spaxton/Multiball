@@ -7,23 +7,10 @@ public class Barrel_Base : MonoBehaviour
 {
     [Header("Barrel Base Configuration")]
     public float ExitVelocity;
-    public int RequiredBounces = 2;
-
 
     [Header("Debugging")]
     public InputHandler PassengerInput;
     public GameObject Passenger;
-    public TextMeshPro BounceTMP;
-
-    public void Start()
-    {
-        BounceTMP = GetComponentInChildren<TextMeshPro>();
-
-        if (BounceTMP != null)
-        {
-            BounceTMP.text = RequiredBounces.ToString();
-        }
-    }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -62,7 +49,6 @@ public class Barrel_Base : MonoBehaviour
         Passenger.transform.SetParent(transform);
 
         //TEST CODE
-        _player.GetComponent<BounceHandler>()?.ResolveBounces(RequiredBounces);
         _player.GetComponent<Dispatch_OnTick>()?.TurnOn();
 
     }

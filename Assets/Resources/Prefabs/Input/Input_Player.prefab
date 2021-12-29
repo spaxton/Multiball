@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3867016872170886232}
   - component: {fileID: 4190806686220977871}
   m_Layer: 0
-  m_Name: Input_Player_BarrelCharge
+  m_Name: Input_Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1036d54a7f9dec4ea7b507975dca38d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPrefab: {fileID: 6701533476737634008, guid: 1dded32c5fd14674985c93a1d0607403, type: 3}
+  PlayerPrefab: {fileID: 6701533476737634008, guid: 309cf60ad7bad9d4290eee50f7b235c4, type: 3}
   SpawnPlayerOnInput: 1
   Spawner: {fileID: 0}
   ControlledPlayer: {fileID: 0}

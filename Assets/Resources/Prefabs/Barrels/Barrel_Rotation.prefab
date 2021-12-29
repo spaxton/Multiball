@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8869349802254240286}
   - component: {fileID: 8869349802254240287}
   m_Layer: 0
-  m_Name: Barrel_Rotation_WallCharge
+  m_Name: Barrel_Rotation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
