@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Barrel_Rotation : Barrel_Base
+public class Barrel_RotationInput : Barrel_Base
 {
     [Header("Rotation Barrel Configuration")]
     public float RotationSpeed;

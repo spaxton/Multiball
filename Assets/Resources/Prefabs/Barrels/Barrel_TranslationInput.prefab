@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 8869349802254240284}
   - component: {fileID: 8869349802254240285}
   - component: {fileID: 8869349802254240286}
-  - component: {fileID: 8869349802254240287}
+  - component: {fileID: 782022735075723780}
+  - component: {fileID: 6003604289345379423}
   m_Layer: 0
-  m_Name: Barrel_Rotation
+  m_Name: Barrel_TranslationInput
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: 1c462308cb8910e4192911cc28f52f4e, type: 3}
-  m_Color: {r: 0.54509807, g: 0.33333334, b: 0.5019608, a: 1}
+  m_Color: {r: 0.43137255, g: 0.6666667, b: 0.47058824, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -112,7 +113,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8869349802254240287
+--- !u!114 &782022735075723780
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -121,15 +122,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 8869349802254240272}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8348f85314ebbea418512811fb2e1c00, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a23d66083117994f9eba3270e12d95c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExitVelocity: 15
-  RequiredBounces: 2
+  ExitVelocity: 0
   PassengerInput: {fileID: 0}
   Passenger: {fileID: 0}
-  BounceTMP: {fileID: 0}
-  RotationSpeed: 100
+  MovementHandler: {fileID: 6003604289345379423}
+--- !u!114 &6003604289345379423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8869349802254240272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6731d05836e5e7441bf9b47fb0953712, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Positions:
+  - {x: 4, y: 4, z: 0}
+  - {x: 4, y: -4, z: 0}
+  - {x: -4, y: -4, z: 0}
+  - {x: -4, y: 4, z: 0}
+  MaxSpeed: 3
+  SpeedSetting: 0
+  CurrentPosition: {x: 0, y: 0, z: 0}
+  NextPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &8869349802473119432
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,7 +223,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1c462308cb8910e4192911cc28f52f4e, type: 3}
-  m_Color: {r: 0.7647059, g: 0.53333336, b: 0.5647059, a: 1}
+  m_Color: {r: 0.33333334, g: 0.4392157, b: 0.39215687, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
