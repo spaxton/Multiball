@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a23d66083117994f9eba3270e12d95c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExitVelocity: 0
+  ExitVelocity: 20
   PassengerInput: {fileID: 0}
   Passenger: {fileID: 0}
   MovementHandler: {fileID: 6003604289345379423}
