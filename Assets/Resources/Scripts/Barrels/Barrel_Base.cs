@@ -36,20 +36,33 @@ public class Barrel_Base : MonoBehaviour
 
     public void BringInPlayer(GameObject _player)
     {
+        if(_player.GetComponent("Alpha_Character") != null){
+            //Modified for alternate character script
+            Passenger = _player;
+            Rigidbody2D RB2D = Passenger.GetComponent<Rigidbody2D>();
+            RB2D.velocity = Vector3.zero;
+            RB2D.isKinematic = true;
 
-        PassengerInput = _player.GetComponent<Movement_Pinball>().IH;
 
-        Passenger = _player;
-        Rigidbody2D RB2D = Passenger.GetComponent<Rigidbody2D>();
-        RB2D.velocity = Vector3.zero;
-        RB2D.isKinematic = true;
+            Passenger.transform.position = transform.position;
+            Passenger.transform.SetParent(transform);
+
+        } else {
+            //Previous character script, should fire normally
+            PassengerInput = _player.GetComponent<Movement_Pinball>().IH;
+
+            Passenger = _player;
+            Rigidbody2D RB2D = Passenger.GetComponent<Rigidbody2D>();
+            RB2D.velocity = Vector3.zero;
+            RB2D.isKinematic = true;
 
 
-        Passenger.transform.position = transform.position;
-        Passenger.transform.SetParent(transform);
+            Passenger.transform.position = transform.position;
+            Passenger.transform.SetParent(transform);
 
-        //TEST CODE
-        _player.GetComponent<Dispatch_OnTick>()?.TurnOn();
+            //TEST CODE
+            _player.GetComponent<Dispatch_OnTick>()?.TurnOn();
+        }
 
     }
     public void ShootPlayerOut()
@@ -64,9 +77,6 @@ public class Barrel_Base : MonoBehaviour
         Passenger = null;
         PassengerInput = null;
 
-
-
-
     }
 
     public void HandleFireInput()
@@ -74,6 +84,13 @@ public class Barrel_Base : MonoBehaviour
         if (PassengerInput != null)
         {
             if (PassengerInput.AInputDown)
+            {
+                ShootPlayerOut();
+            }
+        }
+
+        if(Passenger.GetComponent("Alpha_Character") != null){
+            if (Input.GetKeyDown("space"))
             {
                 ShootPlayerOut();
             }
