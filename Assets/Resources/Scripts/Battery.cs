@@ -24,9 +24,7 @@ public class Battery : MonoBehaviour
         set
         {
             _CurrentCharge = Mathf.Clamp(value, 0F, ChargeCapacity);
-            ChargeMask.localPosition = new Vector2(0F, Mathf.Lerp(MaskTravelDistance, 0F, _CurrentCharge / ChargeCapacity));
-
-            
+            ChargeMask.localPosition = new Vector2(0F, Mathf.Lerp(MaskTravelDistance, 0F, _CurrentCharge / ChargeCapacity));           
         }
     }
 

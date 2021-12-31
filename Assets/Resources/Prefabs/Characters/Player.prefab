@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 113887426700880643}
   - component: {fileID: 3311569083571341913}
   - component: {fileID: 5554515068766719677}
+  - component: {fileID: -5634235214624093932}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -156,7 +157,7 @@ MonoBehaviour:
   CurrentStats:
   - Name: Charge
     MaxValue: 100
-    MinValue: 0
+    MinValue: -100
     _CurrentValue: 0
     StatDisplays: []
   - Name: Bounces
@@ -229,3 +230,15 @@ MonoBehaviour:
   StatName: Charge
   ChangeValue: -1
   Character: {fileID: 6039094584354090536}
+--- !u!114 &-5634235214624093932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6701533476737634008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dba596834524ff49b121d3ca85a392a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

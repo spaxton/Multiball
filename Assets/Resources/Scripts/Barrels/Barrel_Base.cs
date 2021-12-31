@@ -7,6 +7,7 @@ public class Barrel_Base : MonoBehaviour
 {
     [Header("Barrel Base Configuration")]
     public float ExitVelocity;
+    public bool OneTimeUse = false;
 
     [Header("Debugging")]
     public InputHandler PassengerInput;
@@ -60,14 +61,12 @@ public class Barrel_Base : MonoBehaviour
             Passenger.transform.position = transform.position;
             Passenger.transform.SetParent(transform);
 
-            //TEST CODE
             _player.GetComponent<Dispatch_OnTick>()?.TurnOn();
         }
 
     }
     public void ShootPlayerOut()
     {
-        // TEST CODE
         Passenger.GetComponent<Dispatch_OnTick>()?.TurnOff();
 
         Passenger.transform.SetParent(null);
@@ -76,6 +75,11 @@ public class Barrel_Base : MonoBehaviour
         RB2D.isKinematic = false;
         Passenger = null;
         PassengerInput = null;
+
+        if (OneTimeUse)
+        {
+            Destroy(gameObject);
+        }
 
     }
 
@@ -88,13 +92,17 @@ public class Barrel_Base : MonoBehaviour
                 ShootPlayerOut();
             }
         }
-
-        if(Passenger.GetComponent("Alpha_Character") != null){
-            if (Input.GetKeyDown("space"))
+        
+        if (Passenger != null)
+        {
+            if (Passenger.GetComponent("Alpha_Character") != null)
             {
-                ShootPlayerOut();
+                if (Input.GetKeyDown("space"))
+                {
+                    ShootPlayerOut();
+                }
             }
-        }
+        }     
     }
 
     public virtual void HandleMoveInput()

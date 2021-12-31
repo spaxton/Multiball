@@ -21,6 +21,17 @@ public class InputHandler : MonoBehaviour
 
     void Start()
     {
+        GameObject playerInputParent = GameObject.Find("PlayerInputs");
+
+        if (playerInputParent == null)
+        {
+            playerInputParent = new GameObject("PlayerInputs");
+        }
+
+        transform.parent = playerInputParent.transform;
+
+
+
         Spawner = FindObjectOfType<Spawner>();
 
         if (Spawner == null)
@@ -35,7 +46,7 @@ public class InputHandler : MonoBehaviour
             {
                 SpawnPlayer();
             }
-        }       
+        }
     }
 
     public void OnMovement(InputAction.CallbackContext context)
@@ -45,7 +56,7 @@ public class InputHandler : MonoBehaviour
 
     public void GetMousePosition()
     {
-        MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);   
+        MousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     }
 
     public void OnJumpSelect(InputAction.CallbackContext context)

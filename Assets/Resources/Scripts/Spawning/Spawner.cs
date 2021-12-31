@@ -9,6 +9,7 @@ public class Spawner : MonoBehaviour
     public Vector3 SpawnPosition;
     public float GizmoSize = 0.5F;
 
+
     public GameObject Spawn()
     {
         return Instantiate(ObjectToSpawn, SpawnPosition, Quaternion.identity);
