@@ -5,19 +5,13 @@ using UnityEngine;
 public class SpawnHandler : MonoBehaviour
 {
     [Header("Configuration")]
-    public GameObject ObjectToSpawn;
-    public Vector3 SpawnPosition;
-    public float GizmoSize = 0.5F;
+    public List<Spawner> Spawners = new List<Spawner>();
 
-    public GameObject Spawn()
+    public void Spawn()
     {
-        return Instantiate(ObjectToSpawn, SpawnPosition, Quaternion.identity);
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.color = Color.red;
-
-        Gizmos.DrawWireSphere(SpawnPosition, GizmoSize);
+        foreach(Spawner spawner in Spawners)
+        {
+            spawner.Spawn();
+        }
     }
 }

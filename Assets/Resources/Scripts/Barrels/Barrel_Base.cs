@@ -63,10 +63,6 @@ public class Barrel_Base : MonoBehaviour
         RB2D.isKinematic = false;
         Passenger = null;
         PassengerInput = null;
-
-
-
-
     }
 
     public void HandleFireInput()

@@ -8,7 +8,7 @@ public class InputHandler : MonoBehaviour
     public bool SpawnPlayerOnInput = true;
 
     [Header("Debugging")]
-    public SpawnHandler Spawner;
+    public Spawner Spawner;
     public GameObject ControlledPlayer;
     public Vector2 MoveInput;
     public Vector2 MousePosition;
@@ -21,7 +21,7 @@ public class InputHandler : MonoBehaviour
 
     void Start()
     {
-        Spawner = FindObjectOfType<SpawnHandler>();
+        Spawner = FindObjectOfType<Spawner>();
 
         if (Spawner == null)
         {
