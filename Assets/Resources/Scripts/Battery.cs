@@ -55,6 +55,8 @@ public class Battery : MonoBehaviour
                 {
                     OnBatteryCharged(character.gameObject);
                 }
+
+                FindObjectOfType<PinballCharacterResetter>().MoveToStartingBarrel(character);
             }
             else
             {
