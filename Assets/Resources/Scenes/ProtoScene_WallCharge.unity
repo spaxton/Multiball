@@ -193,11 +193,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 406670793131460492, guid: 2a9e815d2f602904db575f1be750efd7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.24
+      value: -3.8
       objectReference: {fileID: 0}
     - target: {fileID: 406670793131460492, guid: 2a9e815d2f602904db575f1be750efd7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.58
+      value: -3.38
       objectReference: {fileID: 0}
     - target: {fileID: 406670793131460492, guid: 2a9e815d2f602904db575f1be750efd7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -551,7 +551,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dispatchers: []
-  TargetPosition: {x: 16, y: -4.5, z: 0}
+  TargetPosition: {x: 18.7, y: 6.266406, z: 1.7058715}
   LerpDuration: 1
   LerpOnStart: 0
   FlipLerpDirectionOnEnd: 0
@@ -13200,7 +13200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dispatchers: []
-  TargetPosition: {x: 9, y: 5.5, z: 0}
+  TargetPosition: {x: 12.2, y: 16.266407, z: 1.7058715}
   LerpDuration: 1
   LerpOnStart: 0
   FlipLerpDirectionOnEnd: 0
@@ -13608,7 +13608,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 406670793131460492, guid: 2a9e815d2f602904db575f1be750efd7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.67
+      value: 0.74
       objectReference: {fileID: 0}
     - target: {fileID: 406670793131460492, guid: 2a9e815d2f602904db575f1be750efd7, type: 3}
       propertyPath: m_LocalPosition.z
